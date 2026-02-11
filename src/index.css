@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --color-bg: #faf6f1;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f0ebe4;
-  --color-border: #e2d9ce;
-  --color-text: #1a1208;
-  --color-text-secondary: #6b5e50;
-  --color-text-muted: #9a8d7f;
-  --color-primary: #8b5e34;
-  --color-primary-hover: #744d2a;
-  --color-primary-light: #f5ede5;
-  --color-accent: #c97b3a;
-  --color-success: #4a8c5c;
-  --color-danger: #c0392b;
-  --color-danger-light: #fdecea;
+  --color-bg: #000000;
+  --color-surface: #1C1C1E;
+  --color-surface-alt: #2C2C2E;
+  --color-border: #38383A;
+  --color-text: #FFFFFF;
+  --color-text-secondary: #98989F;
+  --color-text-muted: #636366;
+  --color-primary: #00D632;
+  --color-primary-hover: #00B82B;
+  --color-primary-light: rgba(0, 214, 50, 0.10);
+  --color-accent: #00D632;
+  --color-success: #00D632;
+  --color-danger: #FF3B30;
+  --color-danger-light: rgba(255, 59, 48, 0.12);
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 3px rgba(26, 18, 8, 0.06);
-  --shadow-md: 0 4px 12px rgba(26, 18, 8, 0.08);
-  --shadow-lg: 0 8px 24px rgba(26, 18, 8, 0.1);
+  --shadow-sm: none;
+  --shadow-md: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.4);
 
   --nav-height: 72px;
 }

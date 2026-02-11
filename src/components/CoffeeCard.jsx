@@ -3,11 +3,11 @@ import { Heart, MapPin, Droplets } from 'lucide-react';
 import { useCoffee } from '../context/CoffeeContext';
 
 const roastColors = {
-  light: '#d4a574',
-  'light-medium': '#b8875a',
-  medium: '#8b6f47',
-  'medium-dark': '#5c4033',
-  dark: '#3b2314',
+  light: '#D4A76A',
+  'light-medium': '#C08B50',
+  medium: '#A06D3A',
+  'medium-dark': '#7A4E2A',
+  dark: '#5C3A1E',
 };
 
 export default function CoffeeCard({ coffee }) {

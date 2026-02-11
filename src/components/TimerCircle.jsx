@@ -13,8 +13,8 @@ export default function TimerCircle({ timeRemaining, totalTime, progress, isRunn
           cy="100"
           r={radius}
           fill="none"
-          stroke="var(--color-surface-alt)"
-          strokeWidth="8"
+          stroke="var(--color-border)"
+          strokeWidth="6"
         />
         <circle
           cx="100"
@@ -22,7 +22,7 @@ export default function TimerCircle({ timeRemaining, totalTime, progress, isRunn
           r={radius}
           fill="none"
           stroke={isComplete ? 'var(--color-success)' : 'var(--color-primary)'}
-          strokeWidth="8"
+          strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
