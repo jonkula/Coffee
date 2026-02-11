@@ -1,0 +1,141 @@
+export const BREW_METHODS = {
+  chemex: {
+    id: 'chemex',
+    name: 'Chemex',
+    icon: 'flask-conical',
+    description: 'Clean, bright cup with paper filter',
+    category: 'Pour Over',
+    defaults: {
+      waterTemperature: { min: 200, max: 205, unit: '°F' },
+      grindSize: 'Medium-Coarse',
+      ratio: '1:15',
+      brewTime: { min: 210, max: 270, unit: 'seconds' },
+    },
+  },
+  v60: {
+    id: 'v60',
+    name: 'Hario V60',
+    icon: 'cone',
+    description: 'Nuanced, complex flavors with cone dripper',
+    category: 'Pour Over',
+    defaults: {
+      waterTemperature: { min: 195, max: 205, unit: '°F' },
+      grindSize: 'Medium-Fine',
+      ratio: '1:16',
+      brewTime: { min: 150, max: 210, unit: 'seconds' },
+    },
+  },
+  kalita: {
+    id: 'kalita',
+    name: 'Kalita Wave',
+    icon: 'waves',
+    description: 'Consistent, forgiving flat-bed brewer',
+    category: 'Pour Over',
+    defaults: {
+      waterTemperature: { min: 195, max: 205, unit: '°F' },
+      grindSize: 'Medium',
+      ratio: '1:16',
+      brewTime: { min: 180, max: 240, unit: 'seconds' },
+    },
+  },
+  melitta: {
+    id: 'melitta',
+    name: 'Melitta',
+    icon: 'triangle',
+    description: 'Classic drip pour over method',
+    category: 'Pour Over',
+    defaults: {
+      waterTemperature: { min: 195, max: 205, unit: '°F' },
+      grindSize: 'Medium',
+      ratio: '1:15',
+      brewTime: { min: 180, max: 240, unit: 'seconds' },
+    },
+  },
+  frenchPress: {
+    id: 'frenchPress',
+    name: 'French Press',
+    icon: 'cylinder',
+    description: 'Full-bodied, rich immersion brew',
+    category: 'Immersion',
+    defaults: {
+      waterTemperature: { min: 195, max: 205, unit: '°F' },
+      grindSize: 'Coarse',
+      ratio: '1:12',
+      brewTime: { min: 240, max: 240, unit: 'seconds' },
+    },
+  },
+  aeropress: {
+    id: 'aeropress',
+    name: 'AeroPress',
+    icon: 'arrow-down-to-line',
+    description: 'Versatile, portable pressure brewer',
+    category: 'Pressure',
+    defaults: {
+      waterTemperature: { min: 175, max: 205, unit: '°F' },
+      grindSize: 'Fine-Medium',
+      ratio: '1:12',
+      brewTime: { min: 60, max: 120, unit: 'seconds' },
+    },
+  },
+  espresso: {
+    id: 'espresso',
+    name: 'Espresso',
+    icon: 'gauge',
+    description: 'Concentrated, high-pressure extraction',
+    category: 'Pressure',
+    defaults: {
+      waterTemperature: { min: 195, max: 205, unit: '°F' },
+      grindSize: 'Very Fine',
+      ratio: '1:2',
+      brewTime: { min: 25, max: 35, unit: 'seconds' },
+    },
+  },
+  mokaPot: {
+    id: 'mokaPot',
+    name: 'Moka Pot',
+    icon: 'flame',
+    description: 'Stovetop espresso-style brew',
+    category: 'Pressure',
+    defaults: {
+      waterTemperature: { min: 190, max: 200, unit: '°F' },
+      grindSize: 'Fine',
+      ratio: '1:7',
+      brewTime: { min: 240, max: 300, unit: 'seconds' },
+    },
+  },
+  turkish: {
+    id: 'turkish',
+    name: 'Turkish Coffee',
+    icon: 'coffee',
+    description: 'Unfiltered, finely ground traditional brew',
+    category: 'Boil',
+    defaults: {
+      waterTemperature: { min: 158, max: 170, unit: '°F' },
+      grindSize: 'Extra Fine (Powder)',
+      ratio: '1:10',
+      brewTime: { min: 150, max: 210, unit: 'seconds' },
+    },
+  },
+  coldBrew: {
+    id: 'coldBrew',
+    name: 'Cold Brew',
+    icon: 'snowflake',
+    description: 'Smooth, low-acidity cold extraction',
+    category: 'Immersion',
+    defaults: {
+      waterTemperature: { min: 35, max: 70, unit: '°F' },
+      grindSize: 'Extra Coarse',
+      ratio: '1:8',
+      brewTime: { min: 43200, max: 86400, unit: 'seconds' },
+    },
+  },
+};
+
+export const BREW_METHOD_LIST = Object.values(BREW_METHODS);
+
+export const BREW_CATEGORIES = [
+  { name: 'Pour Over', methods: ['chemex', 'v60', 'kalita', 'melitta'] },
+  { name: 'Immersion', methods: ['frenchPress', 'coldBrew'] },
+  { name: 'Pressure', methods: ['espresso', 'aeropress', 'mokaPot'] },
+  { name: 'Boil', methods: ['turkish'] },
+];
