@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photo Sphere</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Loading overlay -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p class="loading-text">Loading photos…</p>
+  </div>
+
+  <!-- Three.js renders into this canvas -->
+  <canvas id="canvas"></canvas>
+
+  <!-- Interaction hint (fades out) -->
+  <div id="hint">
+    <span>Drag to rotate</span>
+    <span class="hint-sep">·</span>
+    <span>Scroll to zoom</span>
+    <span class="hint-sep">·</span>
+    <span>Click a photo to open</span>
+  </div>
+
+  <!-- Fullscreen photo modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close" aria-label="Close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal-img-wrap">
+        <img id="modal-img" src="" alt="" />
+      </div>
+      <p id="modal-caption"></p>
+    </div>
+  </div>
+
+  <script type="module" src="sphere.js"></script>
+</body>
+</html>
