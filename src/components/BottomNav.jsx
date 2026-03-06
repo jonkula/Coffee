@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Camera, BookOpen, Heart, Settings } from 'lucide-react';
+import { Home, Camera, BookOpen, Heart, Languages } from 'lucide-react';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
   { to: '/scan', icon: Camera, label: 'Scan' },
   { to: '/library', icon: BookOpen, label: 'Library' },
   { to: '/favorites', icon: Heart, label: 'Favorites' },
-  { to: '/settings', icon: Settings, label: 'Settings' },
+  { to: '/translate', icon: Languages, label: 'Translate' },
 ];
 
 export default function BottomNav() {

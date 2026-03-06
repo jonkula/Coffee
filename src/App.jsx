@@ -9,6 +9,7 @@ import BrewGuidePage from './pages/BrewGuidePage';
 import LibraryPage from './pages/LibraryPage';
 import FavoritesPage from './pages/FavoritesPage';
 import SettingsPage from './pages/SettingsPage';
+import PidginTranslatorPage from './pages/PidginTranslatorPage';
 import './App.css';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
               <Route path="/library" element={<LibraryPage />} />
               <Route path="/favorites" element={<FavoritesPage />} />
               <Route path="/settings" element={<SettingsPage />} />
+              <Route path="/translate" element={<PidginTranslatorPage />} />
             </Routes>
           </main>
           <BottomNav />
