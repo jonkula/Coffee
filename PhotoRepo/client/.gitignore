@@ -22,12 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-PhotoRepo/server/uploads/
-PhotoRepo/server/thumbnails/
-PhotoRepo/server/photo_repo.db
-PhotoRepo/server/.env
-PhotoRepo/node_modules/
-PhotoRepo/server/node_modules/
-PhotoRepo/client/node_modules/
-PhotoRepo/client/dist/
-PhotoRepo/server/photo_repo.db*
