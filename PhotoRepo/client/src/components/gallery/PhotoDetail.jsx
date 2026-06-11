@@ -19,7 +19,7 @@ export function PhotoDetail({ photo, onClose, onChange }) {
 
         <div className="photo-detail__image-wrap">
           <img
-            src={`/photos/original/${photo.id}${photo.filename.match(/\.[^.]+$/)?.[0] || '.jpg'}`}
+            src={photo.photo_url}
             alt={photo.filename}
             className="photo-detail__image"
           />
@@ -71,7 +71,7 @@ export function PhotoDetail({ photo, onClose, onChange }) {
           </div>
 
           <a
-            href={`/photos/original/${photo.id}${photo.filename.match(/\.[^.]+$/)?.[0] || '.jpg'}`}
+            href={photo.photo_url}
             download={photo.filename}
             className="btn-primary photo-detail__download"
           >

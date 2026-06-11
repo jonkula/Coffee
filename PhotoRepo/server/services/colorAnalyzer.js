@@ -39,10 +39,10 @@ function classifyFamily(r, g, b) {
   return 'neutral';
 }
 
-// Sample pixels and run simple k-means (k=5) to find dominant colors
-export async function analyzeColors(filepath) {
+// Accepts either a file path (string) or a Buffer
+export async function analyzeColors(source) {
   try {
-    const { data, info } = await sharp(filepath)
+    const { data } = await sharp(source)
       .resize(150, 150, { fit: 'cover' })
       .removeAlpha()
       .raw()

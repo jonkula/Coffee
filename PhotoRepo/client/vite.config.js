@@ -9,8 +9,6 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': 'http://localhost:3001',
-      '/thumbnails': 'http://localhost:3001',
-      '/photos': 'http://localhost:3001',
     },
   },
 })

@@ -1,11 +1,7 @@
 import { analyzeColors } from './colorAnalyzer.js';
 import { analyzeWithClaude } from './claudeVision.js';
+import { downloadBuffer } from './storageService.js';
 import { stmts } from '../db.js';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const THUMBNAILS_DIR = join(__dirname, '..', 'thumbnails');
 
 const queue = [];
 let processing = false;
@@ -27,15 +23,16 @@ async function processNext() {
     const photo = stmts.getPhoto.get(photoId);
     if (!photo) { processNext(); return; }
 
-    // Step A: color analysis (fast, local)
-    const { dominant_colors, color_family } = await analyzeColors(photo.filepath);
+    // Download thumbnail from R2 once — reuse buffer for both steps
+    const thumbBuffer = await downloadBuffer(photo.thumbnail);
 
-    // Step B: Claude vision (network call)
-    const thumbnailPath = join(THUMBNAILS_DIR, `${photoId}_thumb.jpg`);
+    // Step A: color analysis (local, fast)
+    const { dominant_colors, color_family } = await analyzeColors(thumbBuffer);
+
+    // Step B: Claude Haiku vision
     let ai_description = null, ai_textures = null, ai_mood = null;
-
     try {
-      const result = await analyzeWithClaude(thumbnailPath);
+      const result = await analyzeWithClaude(thumbBuffer);
       ai_description = result.description || null;
       ai_textures = JSON.stringify(result.textures || []);
       ai_mood = JSON.stringify(result.mood || []);

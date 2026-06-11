@@ -1,5 +1,4 @@
 import Anthropic from '@anthropic-ai/sdk';
-import { readFileSync } from 'fs';
 
 const client = new Anthropic();
 
@@ -14,8 +13,11 @@ For textures: use descriptive material/surface terms like "rough stone", "smooth
 For mood: use atmosphere terms like "warm", "melancholy", "energetic", "serene", "dramatic", "nostalgic", "bright", "moody".
 Limit textures to 8 items and mood to 5 items. Return only the JSON, no other text.`;
 
-export async function analyzeWithClaude(thumbnailPath) {
-  const imageData = readFileSync(thumbnailPath).toString('base64');
+// Accepts either a Buffer or a base64 string
+export async function analyzeWithClaude(bufferOrBase64) {
+  const imageData = Buffer.isBuffer(bufferOrBase64)
+    ? bufferOrBase64.toString('base64')
+    : bufferOrBase64;
 
   const response = await client.messages.create({
     model: 'claude-haiku-4-5',
